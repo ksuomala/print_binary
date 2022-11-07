@@ -5,7 +5,7 @@ If the second argument is a string, size_in_bits should be set to 0.
 
 
 ```C
-void	ft_print_binary(int size_in_bits, ...)
+void	print_binary(int size_in_bits, ...)
 ```
 
 The code should be included and compiled in your own repository.
