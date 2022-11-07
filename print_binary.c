@@ -1,17 +1,3 @@
-#include <stdint.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdarg.h>
-
-typedef union	s_input
-{
-	uint8_t		chr;
-	uint16_t	shrt;
-	uint32_t	i;
-	uint64_t	ul;
-	char		*str;
-}				t_input;
-
 /*
 
 Prints any variable type in binary to the standard output.
@@ -19,6 +5,11 @@ First argument is the size of the next argument variable in bits.
 The rest of the arguments given will be ignored.
 
 */
+
+#include <stdint.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdarg.h>
 
 static void print_byte(uint8_t byte)
 {
@@ -31,7 +22,6 @@ static void print_byte(uint8_t byte)
 	printf("%c", (byte & 0x02 ? '1' : '0'));
 	printf("%c ", (byte & 0x01 ? '1' : '0'));
 }
-
 
 static void print_str(va_list ap)
 {
