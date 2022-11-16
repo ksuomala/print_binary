@@ -2,7 +2,7 @@
 
 Prints any variable type in binary to the standard output.
 First argument is the size of the next argument variable in bits.
-The rest of the arguments given will be ignored.
+If the argument is a string, set size_in_bits to 0.
 
 */
 
@@ -80,7 +80,7 @@ void	print_short(va_list ap)
 	print_byte(shrt & 0xFF);
 }
 
-void	ft_print_binary(int size_in_bits, ...)
+void	print_binary(int size_in_bits, ...)
 {
 	va_list		ap;
 
@@ -97,9 +97,9 @@ void	ft_print_binary(int size_in_bits, ...)
 		print_ul(ap);
 	else
 	{
-		printf("size_in_bits must be a multiple of 8 and <= 64");
+		printf("size_in_bits must be 0 (if it's a string), a multiple of 8 and <= 64");
 		return ;
 	}
 	va_end(ap);
-
+	return ;
 }
